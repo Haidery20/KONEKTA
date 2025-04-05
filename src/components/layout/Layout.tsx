@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowRight, Zap, Shield, Rocket, ChevronDown, Link, Github, Twitter, Linkedin, X } from 'lucide-react';
+import { Link as RouterLink } from 'react-router-dom';
+import { ArrowRight, Zap, Shield, Rocket, ChevronDown, Link as LinkIcon, Github, Twitter, Linkedin, X } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface LayoutProps {
@@ -18,10 +19,10 @@ export default function Layout({ children }: LayoutProps) {
       <header className="bg-[#4a5d4a] text-white shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
         <motion.div style={{ y: headerY }} className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <Link className="w-8 h-8 text-white" />
+            <RouterLink to="/" className="flex items-center">
+              <LinkIcon className="w-8 h-8 text-white" />
               <h1 className="ml-2 text-xl font-bold">Konekta</h1>
-            </div>
+            </RouterLink>
             <nav className="hidden sm:flex items-center space-x-8">
               <motion.a
                 href="#features"
@@ -89,7 +90,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Link className="w-6 h-6" />
+                <LinkIcon className="w-6 h-6" />
                 <span className="text-white font-semibold">Konekta</span>
               </div>
               <p className="text-sm">Track your assets with confidence.</p>
@@ -127,7 +128,7 @@ export default function Layout({ children }: LayoutProps) {
           </div>
           <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Link className="w-6 h-6" />
+              <LinkIcon className="w-6 h-6" />
               <span className="text-white font-semibold">Konekta</span>
             </div>
             <div className="flex items-center gap-6">
