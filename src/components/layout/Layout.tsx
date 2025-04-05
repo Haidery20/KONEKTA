@@ -2,6 +2,7 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { ArrowRight, Zap, Shield, Rocket, ChevronDown, Link as LinkIcon, Github, Twitter, Linkedin, X } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import ChatBot from '../ChatBot';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -148,6 +149,8 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
+
+      <ChatBot />
     </div>
   );
 }
