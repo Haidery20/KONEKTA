@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, User, Users, MessageSquare, Code, BookOpen, Gift } from 'lucide-react';
+import { ArrowRight, User, Users, MessageSquare, Code, BookOpen, Gift, Star, Clock } from 'lucide-react';
 
 const CommunityPage = () => {
   const communityFeatures = [
@@ -27,6 +27,33 @@ const CommunityPage = () => {
       icon: <Gift className="w-8 h-8 text-[#4a5d4a]" />,
       title: "Monthly Challenges",
       description: "Participate in monthly coding challenges and competitions. Win prizes and recognition for your contributions.",
+    },
+  ];
+
+  const featuredProjects = [
+    {
+      title: "Konekta Dashboard",
+      description: "A modern, responsive dashboard for Konekta users with real-time tracking capabilities.",
+      author: "@devjohn",
+      stars: 150,
+      lastUpdated: "2 hours ago",
+      tags: ["React", "TypeScript", "Tailwind CSS"],
+    },
+    {
+      title: "Asset Tracker App",
+      description: "Mobile-friendly application for tracking assets in real-time with offline support.",
+      author: "@mobiledev",
+      stars: 215,
+      lastUpdated: "4 hours ago",
+      tags: ["React Native", "Firebase", "GPS"],
+    },
+    {
+      title: "Konekta API Client",
+      description: "Official JavaScript client library for the Konekta API with TypeScript support.",
+      author: "@konekta",
+      stars: 320,
+      lastUpdated: "1 day ago",
+      tags: ["JavaScript", "TypeScript", "API"],
     },
   ];
 
@@ -77,6 +104,55 @@ const CommunityPage = () => {
                 <h3 className="text-xl font-semibold text-[#4a5d4a]">{feature.title}</h3>
               </div>
               <p className="text-gray-600">{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Featured Projects Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24"
+      >
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-[#4a5d4a] mb-4">Featured Projects</h2>
+          <p className="text-gray-600">Explore amazing projects built by our community members</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+            >
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-[#4a5d4a] mb-2">{project.title}</h3>
+                <p className="text-gray-600 mb-4">{project.description}</p>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <Star className="w-4 h-4 text-yellow-400" />
+                    <span className="text-sm text-gray-600">{project.stars} stars</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-gray-400" />
+                    <span className="text-sm text-gray-600">{project.lastUpdated}</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-2 py-1 text-sm bg-[#4a5d4a]/10 text-[#4a5d4a] rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
