@@ -1,10 +1,12 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, User, Users, MessageSquare, Code, BookOpen, Gift, Star, Clock } from 'lucide-react';
+import { Users, MessageCircle, Github } from 'lucide-react';
+import { ArrowRight, User, Users as UsersIcon, MessageSquare, Code, BookOpen, Gift, Star, Clock } from 'lucide-react';
 
-const CommunityPage = () => {
+const CommunityPage: React.FC = () => {
   const communityFeatures = [
     {
-      icon: <Users className="w-8 h-8 text-[#4a5d4a]" />,
+      icon: <UsersIcon className="w-8 h-8 text-[#4a5d4a]" />,
       title: "Active Community",
       description: "Join a vibrant community of developers, designers, and entrepreneurs who share knowledge and collaborate on projects.",
     },
@@ -58,162 +60,155 @@ const CommunityPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16"
-      >
-        <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#4a5d4a] mb-4">
-            Welcome to the Konekta Community
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Join thousands of developers and creators who share knowledge, collaborate on projects, and build amazing things together.
+      <section className="relative py-20 bg-[#4a5d4a] text-white">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#4a5d4a]/90 to-[#3d4d3d]/90"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Welcome to the Konekta Community
+            </h1>
+            <p className="text-xl md:text-2xl text-[#a8b5a8] mb-8 max-w-2xl mx-auto">
+              Join thousands of developers building the future of asset tracking and management.
+            </p>
+            <div className="flex justify-center gap-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-[#4a5d4a] px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                Join the Community
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#a8b5a8] text-[#4a5d4a] px-8 py-3 rounded-lg hover:bg-[#b3c5b3] transition-colors"
+              >
+                Learn More
+              </motion.button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Features */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-[#4a5d4a] mb-12">
+            Why Join Our Community?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {communityFeatures.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="flex items-center justify-center w-12 h-12 bg-[#4a5d4a]/10 rounded-full mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-[#4a5d4a] mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-20 bg-[#f8faf8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-[#4a5d4a] mb-12">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[#4a5d4a] mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <Star className="w-4 h-4 text-yellow-400" />
+                      <span className="text-sm text-gray-600">{project.stars} stars</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-gray-400" />
+                      <span className="text-sm text-gray-600">{project.lastUpdated}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-2 py-1 text-sm bg-[#4a5d4a]/10 text-[#4a5d4a] rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Community Stats */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-3xl font-bold text-[#4a5d4a] mb-2">10K+</h3>
+              <p className="text-gray-600">Active Members</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-3xl font-bold text-[#4a5d4a] mb-2">500+</h3>
+              <p className="text-gray-600">Monthly Projects</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-3xl font-bold text-[#4a5d4a] mb-2">200+</h3>
+              <p className="text-gray-600">Weekly Events</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-3xl font-bold text-[#4a5d4a] mb-2">95%</h3>
+              <p className="text-gray-600">Member Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-[#4a5d4a] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Join Our Community?
+          </h2>
+          <p className="text-xl text-[#a8b5a8] mb-8 max-w-2xl mx-auto">
+            Start connecting with like-minded developers and contribute to the future of asset tracking.
           </p>
           <motion.button
-            className="bg-[#4a5d4a] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#3d4d3d] transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="bg-white text-[#4a5d4a] px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors"
           >
-            Join the Community
+            Get Started Now
           </motion.button>
         </div>
-      </motion.div>
-
-      {/* Features Grid */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {communityFeatures.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                {feature.icon}
-                <h3 className="text-xl font-semibold text-[#4a5d4a]">{feature.title}</h3>
-              </div>
-              <p className="text-gray-600">{feature.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Featured Projects Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24"
-      >
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-[#4a5d4a] mb-4">Featured Projects</h2>
-          <p className="text-gray-600">Explore amazing projects built by our community members</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-            >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#4a5d4a] mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <Star className="w-4 h-4 text-yellow-400" />
-                    <span className="text-sm text-gray-600">{project.stars} stars</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-gray-400" />
-                    <span className="text-sm text-gray-600">{project.lastUpdated}</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-2 py-1 text-sm bg-[#4a5d4a]/10 text-[#4a5d4a] rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Stats Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="bg-[#4a5d4a] text-white py-16"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-              <h3 className="text-3xl font-bold">10,000+</h3>
-              <p className="text-gray-300">Active Members</p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold">500+</h3>
-              <p className="text-gray-300">Monthly Projects</p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold">200+</h3>
-              <p className="text-gray-300">Weekly Events</p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold">95%</h3>
-              <p className="text-gray-300">Member Satisfaction</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Call to Action */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16"
-      >
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="text-center md:text-left mb-4 md:mb-0">
-              <h2 className="text-2xl font-bold text-[#4a5d4a] mb-2">
-                Ready to Join the Community?
-              </h2>
-              <p className="text-gray-600">
-                Start connecting with other developers today and unlock endless possibilities.
-              </p>
-            </div>
-            <motion.button
-              className="bg-[#4a5d4a] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#3d4d3d] transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get Started
-            </motion.button>
-          </div>
-        </div>
-      </motion.div>
+      </section>
     </div>
   );
 };
