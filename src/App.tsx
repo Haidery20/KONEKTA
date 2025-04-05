@@ -210,7 +210,7 @@ function App() {
 
               <div className="text-center">
                 <p className="text-sm text-gray-600">
-                  {authModal.type === 'login 
+                  {authModal.type === 'login' 
                     ? "Don't have an account? "
                     : 'Already have an account? '}
                   <button
