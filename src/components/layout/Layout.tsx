@@ -51,7 +51,7 @@ export default function Layout({ children }: LayoutProps) {
                 Documentation
               </motion.a>
               <motion.a
-                href="#community"
+                href="/community"
                 className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
