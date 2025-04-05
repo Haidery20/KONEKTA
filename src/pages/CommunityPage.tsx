@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, MessageCircle, Github } from 'lucide-react';
 import { ArrowRight, User, Users as UsersIcon, MessageSquare, Code, BookOpen, Gift, Star, Clock, Twitter, Facebook } from 'lucide-react';
-import { RouterLink } from '@remix-run/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const CommunityPage: React.FC = () => {
   const communityFeatures = [
@@ -251,44 +251,24 @@ const CommunityPage: React.FC = () => {
               <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <motion.a
-                    as={RouterLink}
-                    to="/features"
-                    whileHover={{ scale: 1.05 }}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
+                  <RouterLink to="/features" className="text-gray-400 hover:text-white transition-colors">
                     Features
-                  </motion.a>
+                  </RouterLink>
                 </li>
                 <li>
-                  <motion.a
-                    as={RouterLink}
-                    to="/pricing"
-                    whileHover={{ scale: 1.05 }}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
+                  <RouterLink to="/pricing" className="text-gray-400 hover:text-white transition-colors">
                     Pricing
-                  </motion.a>
+                  </RouterLink>
                 </li>
                 <li>
-                  <motion.a
-                    as={RouterLink}
-                    to="/docs"
-                    whileHover={{ scale: 1.05 }}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
+                  <RouterLink to="/docs" className="text-gray-400 hover:text-white transition-colors">
                     Documentation
-                  </motion.a>
+                  </RouterLink>
                 </li>
                 <li>
-                  <motion.a
-                    as={RouterLink}
-                    to="/community"
-                    whileHover={{ scale: 1.05 }}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
+                  <RouterLink to="/community" className="text-gray-400 hover:text-white transition-colors">
                     Community
-                  </motion.a>
+                  </RouterLink>
                 </li>
               </ul>
             </div>
