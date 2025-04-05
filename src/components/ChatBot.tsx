@@ -52,33 +52,33 @@ const ChatBot: React.FC = () => {
     const lowerInput = userInput.toLowerCase();
 
     if (lowerInput.includes('help') || lowerInput.includes('support')) {
-      return "I can help you with:
+      return `I can help you with:
 1. Getting started with Konekta
 2. Understanding our pricing plans
 3. Setting up your account
 4. Using our features
 5. Troubleshooting issues
 
-What would you like to know more about?";
+What would you like to know more about?`;
     }
 
     if (lowerInput.includes('pricing') || lowerInput.includes('plans')) {
-      return "We offer three pricing plans:
+      return `We offer three pricing plans:
 1. Basic - Perfect for individuals
 2. Professional - Ideal for small teams
 3. Enterprise - Custom solutions for large organizations
 
-Would you like to know more about any specific plan?";
+Would you like to know more about any specific plan?`;
     }
 
     if (lowerInput.includes('setup') || lowerInput.includes('account')) {
-      return "To get started:
+      return `To get started:
 1. Sign up for an account
 2. Choose your preferred plan
 3. Set up your profile
 4. Start using our features
 
-Need help with any specific step?";
+Need help with any specific step?`;
     }
 
     return "I'm here to help! How can I assist you today?";
