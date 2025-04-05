@@ -18,17 +18,17 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-white shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
+      <header className="bg-[#4a5d4a] dark:bg-[#3d4d3d] text-white dark:text-gray-300 shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
         <motion.div style={{ y: headerY }} className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <RouterLink to="/" className="flex items-center">
               <LinkIcon className="w-8 h-8 text-white dark:text-gray-300" />
-              <h1 className="ml-2 text-xl font-bold text-[#4a5d4a] dark:text-[#a0b3a0]">Konekta</h1>
+              <h1 className="ml-2 text-xl font-bold text-white dark:text-gray-300">Konekta</h1>
             </RouterLink>
             <nav className="hidden sm:flex items-center space-x-8">
               <motion.a
                 href="#features"
-                className="text-white dark:text-gray-300 hover:text-[#4a5d4a] dark:hover:text-[#a0b3a0] transition-colors"
+                className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -36,7 +36,7 @@ export default function Layout({ children }: LayoutProps) {
               </motion.a>
               <motion.a
                 href="/pricing"
-                className="text-white dark:text-gray-300 hover:text-[#4a5d4a] dark:hover:text-[#a0b3a0] transition-colors"
+                className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -44,7 +44,7 @@ export default function Layout({ children }: LayoutProps) {
               </motion.a>
               <motion.a
                 href="#docs"
-                className="text-white dark:text-gray-300 hover:text-[#4a5d4a] dark:hover:text-[#a0b3a0] transition-colors"
+                className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -52,7 +52,7 @@ export default function Layout({ children }: LayoutProps) {
               </motion.a>
               <motion.a
                 href="#community"
-                className="text-white dark:text-gray-300 hover:text-[#4a5d4a] dark:hover:text-[#a0b3a0] transition-colors"
+                className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -63,7 +63,7 @@ export default function Layout({ children }: LayoutProps) {
               <ThemeSwitcher />
               <motion.button 
                 onClick={() => console.log('Login')}
-                className="text-sm font-medium text-white dark:text-gray-300 hover:text-[#4a5d4a] dark:hover:text-[#a0b3a0] transition-colors"
+                className="text-sm font-medium text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -71,7 +71,7 @@ export default function Layout({ children }: LayoutProps) {
               </motion.button>
               <motion.button 
                 onClick={() => console.log('Signup')}
-                className="bg-[#4a5d4a] dark:bg-[#a0b3a0] text-white px-4 py-2 rounded-md hover:bg-[#3d4d3d] dark:hover:bg-[#b3c5b3] transition-colors"
+                className="bg-white dark:bg-[#a8b5a8] text-[#4a5d4a] dark:text-[#3d4d3d] px-4 py-2 rounded-md hover:bg-[#f8faf8] dark:hover:bg-[#b3c5b3] transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
