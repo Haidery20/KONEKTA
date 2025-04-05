@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, MessageCircle, Github } from 'lucide-react';
 import { ArrowRight, User, Users as UsersIcon, MessageSquare, Code, BookOpen, Gift, Star, Clock, Twitter, Facebook } from 'lucide-react';
+import { RouterLink } from '@remix-run/react';
 
 const CommunityPage: React.FC = () => {
   const communityFeatures = [
@@ -251,6 +252,8 @@ const CommunityPage: React.FC = () => {
               <ul className="space-y-2">
                 <li>
                   <motion.a
+                    as={RouterLink}
+                    to="/features"
                     whileHover={{ scale: 1.05 }}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -259,6 +262,8 @@ const CommunityPage: React.FC = () => {
                 </li>
                 <li>
                   <motion.a
+                    as={RouterLink}
+                    to="/pricing"
                     whileHover={{ scale: 1.05 }}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -267,6 +272,8 @@ const CommunityPage: React.FC = () => {
                 </li>
                 <li>
                   <motion.a
+                    as={RouterLink}
+                    to="/docs"
                     whileHover={{ scale: 1.05 }}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -275,6 +282,8 @@ const CommunityPage: React.FC = () => {
                 </li>
                 <li>
                   <motion.a
+                    as={RouterLink}
+                    to="/community"
                     whileHover={{ scale: 1.05 }}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -340,7 +349,7 @@ const CommunityPage: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Phone: +1 234 567 8900
+                    Phone: +255 735 431 733
                   </motion.a>
                 </li>
                 <li>
@@ -348,7 +357,7 @@ const CommunityPage: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Address: 123 Tech Street, Silicon Valley
+                    Address: 123 Mtwara Cresent, Dar es salaam, Tanzania.
                   </motion.a>
                 </li>
               </ul>
