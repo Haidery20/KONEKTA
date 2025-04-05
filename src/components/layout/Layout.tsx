@@ -48,12 +48,12 @@ export default function Layout({ children }: LayoutProps) {
                 Documentation
               </motion.a>
               <motion.a
-                href="#blog"
+                href="#community"
                 className="text-white hover:text-[#a8b5a8] transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Blog
+                Community
               </motion.a>
             </nav>
             <div className="flex items-center space-x-4">
@@ -99,7 +99,7 @@ export default function Layout({ children }: LayoutProps) {
               <ul className="space-y-2">
                 <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
                 <li><a href="#careers" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#blog" className="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#community" className="hover:text-white transition-colors">Community</a></li>
               </ul>
             </div>
             <div>
