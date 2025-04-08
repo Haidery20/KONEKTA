@@ -1,19 +1,18 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Rocket, ChevronDown, Link as LinkIcon, Github, Twitter, Linkedin, X } from 'lucide-react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as LinkIcon } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import ChatBot from '../ChatBot';
 import ThemeSwitcher from '../ThemeSwitcher';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 100], [1, 0.5]);
-  const scale = useTransform(scrollY, [0, 100], [1, 0.95]);
   const headerY = useTransform(scrollY, [0, 100], [0, -10]);
+  const location = useLocation();
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -26,38 +25,36 @@ export default function Layout({ children }: LayoutProps) {
               <h1 className="ml-2 text-xl font-bold text-white dark:text-gray-300">Konekta</h1>
             </RouterLink>
             <nav className="hidden sm:flex items-center space-x-8">
-              <motion.a
-                href="#features"
+              <RouterLink
+                to="/"
                 className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
-                Features
-              </motion.a>
-              <motion.a
-                href="/pricing"
-                className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                Home
+              </RouterLink>
+              <RouterLink
+                to="/pricing"
+                className={`text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors ${
+                  location.pathname === '/pricing' ? 'text-[#a8b5a8] dark:text-[#b3c5b3]' : ''
+                }`}
               >
                 Pricing
-              </motion.a>
-              <motion.a
-                href="#docs"
-                className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              </RouterLink>
+              <RouterLink
+                to="/docs"
+                className={`text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors ${
+                  location.pathname === '/docs' ? 'text-[#a8b5a8] dark:text-[#b3c5b3]' : ''
+                }`}
               >
                 Documentation
-              </motion.a>
-              <motion.a
-                href="/community"
-                className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              </RouterLink>
+              <RouterLink
+                to="/community"
+                className={`text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors ${
+                  location.pathname === '/community' ? 'text-[#a8b5a8] dark:text-[#b3c5b3]' : ''
+                }`}
               >
                 Community
-              </motion.a>
+              </RouterLink>
             </nav>
             <div className="flex items-center space-x-4">
               <ThemeSwitcher />
@@ -101,30 +98,30 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="text-gray-200 font-semibold mb-4">Company</h3>
               <ul className="space-y-2">
-                <li><a href="#about" className="hover:text-white dark:hover:text-gray-300 transition-colors">About</a></li>
-                <li><a href="#careers" className="hover:text-white dark:hover:text-gray-300 transition-colors">Careers</a></li>
-                <li><a href="#community" className="hover:text-white dark:hover:text-gray-300 transition-colors">Community</a></li>
+                <li><RouterLink to="/about" className="hover:text-white dark:hover:text-gray-300 transition-colors">About</RouterLink></li>
+                <li><RouterLink to="/careers" className="hover:text-white dark:hover:text-gray-300 transition-colors">Careers</RouterLink></li>
+                <li><RouterLink to="/community" className="hover:text-white dark:hover:text-gray-300 transition-colors">Community</RouterLink></li>
               </ul>
             </div>
             <div>
               <h3 className="text-gray-200 font-semibold mb-4">Support</h3>
               <ul className="space-y-2">
-                <li><a href="#help" className="hover:text-white dark:hover:text-gray-300 transition-colors">Help Center</a></li>
-                <li><a href="#contact" className="hover:text-white dark:hover:text-gray-300 transition-colors">Contact Us</a></li>
-                <li><a href="#docs" className="hover:text-white dark:hover:text-gray-300 transition-colors">Documentation</a></li>
+                <li><RouterLink to="/help" className="hover:text-white dark:hover:text-gray-300 transition-colors">Help Center</RouterLink></li>
+                <li><RouterLink to="/contact" className="hover:text-white dark:hover:text-gray-300 transition-colors">Contact Us</RouterLink></li>
+                <li><RouterLink to="/docs" className="hover:text-white dark:hover:text-gray-300 transition-colors">Documentation</RouterLink></li>
               </ul>
             </div>
             <div>
               <h3 className="text-gray-200 font-semibold mb-4">Follow Us</h3>
               <div className="flex items-center gap-4">
                 <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">
-                  <Github className="w-5 h-5" />
+                  <LinkIcon className="w-5 h-5" />
                 </a>
                 <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">
-                  <Twitter className="w-5 h-5" />
+                  <LinkIcon className="w-5 h-5" />
                 </a>
                 <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">
-                  <Linkedin className="w-5 h-5" />
+                  <LinkIcon className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -136,13 +133,13 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">
-                <Github className="w-5 h-5" />
+                <LinkIcon className="w-5 h-5" />
               </a>
               <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">
-                <Twitter className="w-5 h-5" />
+                <LinkIcon className="w-5 h-5" />
               </a>
               <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">
-                <Linkedin className="w-5 h-5" />
+                <LinkIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
