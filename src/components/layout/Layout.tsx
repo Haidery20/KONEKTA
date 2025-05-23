@@ -1,10 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Link, Github, Twitter, Linkedin } from 'lucide-react';
-=======
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { Link as LinkIcon } from 'lucide-react';
->>>>>>> d50091397e7af43b692c7be03410d133fc8b715d
+import { Link as LinkIcon, Github, Twitter, Linkedin } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import ChatBot from '../ChatBot';
 import ThemeSwitcher from '../ThemeSwitcher';
@@ -21,7 +17,6 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-<<<<<<< HEAD
       <header className="bg-primary text-secondary-dark shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
         <motion.div style={{ y: headerY }} className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
@@ -35,7 +30,6 @@ export default function Layout({ children }: LayoutProps) {
                 className="text-secondary-dark hover:text-primary-dark transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-=======
       <header className="bg-[#4B89DC] dark:bg-[#3A6FB5] text-white dark:text-gray-300 shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
         <motion.div style={{ y: headerY }} className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
@@ -47,7 +41,6 @@ export default function Layout({ children }: LayoutProps) {
               <RouterLink
                 to="/"
                 className="text-white dark:text-gray-300 hover:text-[#A5C2EF] dark:hover:text-[#B8D1F3] transition-colors"
->>>>>>> d50091397e7af43b692c7be03410d133fc8b715d
               >
                 Home
               </RouterLink>
