@@ -17,7 +17,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-[#4a5d4a] dark:bg-[#3d4d3d] text-white dark:text-gray-300 shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
+      <header className="bg-[#4B89DC] dark:bg-[#3A6FB5] text-white dark:text-gray-300 shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
         <motion.div style={{ y: headerY }} className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <RouterLink to="/" className="flex items-center">
@@ -27,7 +27,7 @@ export default function Layout({ children }: LayoutProps) {
             <nav className="hidden sm:flex items-center space-x-8">
               <RouterLink
                 to="/"
-                className="text-white dark:text-gray-300 hover:text-[#a8b5a8] dark:hover:text-[#b3c5b3] transition-colors"
+                className="text-white dark:text-gray-300 hover:text-[#A5C2EF] dark:hover:text-[#B8D1F3] transition-colors"
               >
                 Home
               </RouterLink>

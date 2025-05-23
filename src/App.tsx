@@ -39,7 +39,7 @@ function App() {
                 >
                   <div className="absolute inset-0 bg-gray-900/60"></div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 to-[#4a5d4a]/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 to-[#4B89DC]/80"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 relative">
                   <div className="text-center">
                     <div className="flex items-center justify-center gap-2 mb-6">
@@ -48,7 +48,7 @@ function App() {
                     </div>
                     <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
                       Connect. Create.
-                      <span className="text-[#a8b5a8]"> Conquer.</span>
+                      <span className="text-[#A5C2EF]"> Conquer.</span>
                     </h1>
                     <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-10">
                       Join Konekta's powerful platform where developers connect, collaborate, and create exceptional digital experiences together.
@@ -56,7 +56,7 @@ function App() {
                     <div className="flex justify-center gap-4">
                       <motion.button 
                         onClick={() => setAuthModal({ isOpen: true, type: 'signup' })}
-                        className="bg-[#4a5d4a] text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-[#3d4d3d] transition-colors"
+                        className="bg-[#4B89DC] text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-[#3A6FB5] transition-colors"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
