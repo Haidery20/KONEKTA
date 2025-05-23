@@ -18,7 +18,7 @@ function App() {
   });
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <Routes>
         <Route path="/" element={
           <Layout>
