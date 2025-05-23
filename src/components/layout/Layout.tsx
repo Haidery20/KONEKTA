@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Zap, Shield, Rocket, ChevronDown, Link, Github, Twitter, Linkedin, X } from 'lucide-react';
+import { Link, Github, Twitter, Linkedin } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface LayoutProps {
@@ -8,8 +8,6 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 100], [1, 0.5]);
-  const scale = useTransform(scrollY, [0, 100], [1, 0.95]);
   const headerY = useTransform(scrollY, [0, 100], [0, -10]);
 
   return (
