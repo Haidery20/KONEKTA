@@ -15,17 +15,17 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-[#4a5d4a] text-white shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
+      <header className="bg-primary text-secondary-dark shadow-lg rounded-2xl fixed top-4 left-0 right-0 z-50 transform transition-transform duration-300 hover:scale-[1.02]">
         <motion.div style={{ y: headerY }} className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <Link className="w-8 h-8 text-white" />
-              <h1 className="ml-2 text-xl font-bold">Konekta</h1>
+              <Link className="w-8 h-8 text-secondary-dark" />
+              <h1 className="ml-2 text-xl font-bold text-secondary-dark">Konekta</h1>
             </div>
             <nav className="hidden sm:flex items-center space-x-8">
               <motion.a
                 href="#features"
-                className="text-white hover:text-[#a8b5a8] transition-colors"
+                className="text-secondary-dark hover:text-primary-dark transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
